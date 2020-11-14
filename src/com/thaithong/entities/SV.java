@@ -32,6 +32,8 @@ public class SV {
 	private String insurrance;
 	
 	private Regions region ;
+	
+	private String lopsv_id;
 
 	@ManyToOne
 	@JoinColumn(name = "lopsv_id")
@@ -39,6 +41,14 @@ public class SV {
 
 	public SV() {
 		super();
+	}
+	
+	public String getLopsv_id() {
+		return lopsv_id;
+	}
+
+	public void setLopsv_id(String lopsv_id) {
+		this.lopsv_id = lopsv_id;
 	}
 
 	public String getId() { 

@@ -6,11 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
 import com.thaithong.entities.SV;
 import com.thaithong.enums.Regions;
-import com.thaithong.utils.DBUtil;
 
 public class SVRepository {
 	private Connection conn;
@@ -38,6 +35,7 @@ public class SVRepository {
 				sv.setPassport(rs.getString("passport"));
 				sv.setInsurrance(rs.getString("insurrance"));
 				sv.setRegion(Regions.valueOf(rs.getString("region")));
+				sv.setLopsv_id(rs.getString("lopsv_id"));
 				list.add(sv);
 			}
 
@@ -65,26 +63,13 @@ public class SVRepository {
 				sv.setPassport(rs.getString("passport"));
 				sv.setInsurrance(rs.getString("insurrance"));
 				sv.setRegion(Regions.valueOf(rs.getString("region")));
+				sv.setLopsv_id(rs.getString("lopsv_id"));
 				listReturn.add(sv);
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return listReturn;
-	}
-
-	public SV getSvById(String id) {
-		EntityManager em = DBUtil.getEmFactory().createEntityManager();
-		try {
-			SV sv = em.find(SV.class, id);
-			return sv;
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		} finally {
-			em.close();
-		}
-		return null;
 	}
 
 }

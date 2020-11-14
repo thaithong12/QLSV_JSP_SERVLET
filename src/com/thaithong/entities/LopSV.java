@@ -2,11 +2,8 @@ package com.thaithong.entities;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +14,6 @@ public class LopSV {
 
 	private String name;
 	
-	@OneToMany(mappedBy = "lopSV", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<SV> listSv;
 
 	public LopSV() {
