@@ -6,7 +6,7 @@
     id="WebApp_ID" version="3.1">
     <display-name>QLSV_SERVLET</display-name>
  
-    <servlet>
+<!--     <servlet>
         <servlet-name>ControllerServlet</servlet-name>
         <servlet-class>com.thaithong.controller.WebServletController</servlet-class>
     </servlet>
@@ -14,7 +14,7 @@
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
  
     <error-page>
         <exception-type>java.lang.Exception</exception-type>

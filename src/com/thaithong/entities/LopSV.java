@@ -1,13 +1,8 @@
 package com.thaithong.entities;
 
 import java.util.List;
-
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "lopsv")
 public class LopSV {
 	@Id
 	private String id;
@@ -18,6 +13,12 @@ public class LopSV {
 
 	public LopSV() {
 		super();
+	}
+
+	public LopSV(String id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
 	}
 
 	public LopSV(String name, List<SV> listSv) {
