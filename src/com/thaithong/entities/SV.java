@@ -1,57 +1,26 @@
 package com.thaithong.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
-import com.thaithong.enums.Regions;
-
-@Entity
-@Table(name = "sv")
 public class SV {
-	@Id
+
 	private String id;
 
 	private String name;
 
 	private String address;
 
-	@Column(name = "phone_number")
 	private String phoneNumber;
 
-	private boolean gender;
-
-	private String passport;
-
-	@Column(name = "email_education")
 	private String emailEducation;
-
-	private String insurrance;
-	
-	private Regions region ;
 	
 	private String lopsv_id;
 
-	@ManyToOne
-	@JoinColumn(name = "lopsv_id")
 	private LopSV lopSV;
 
 	public SV() {
 		super();
 	}
-	
-	public String getLopsv_id() {
-		return lopsv_id;
-	}
 
-	public void setLopsv_id(String lopsv_id) {
-		this.lopsv_id = lopsv_id;
-	}
-
-	public String getId() { 
+	public String getId() {
 		return id;
 	}
 
@@ -66,25 +35,13 @@ public class SV {
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-
-	public boolean isGender() {
-		return gender;
-	}
-
-	public String getPassport() {
-		return passport;
-	}
-
+	
 	public String getEmailEducation() {
 		return emailEducation;
 	}
 
-	public String getInsurrance() {
-		return insurrance;
-	}
-
-	public Regions getRegion() {
-		return region;
+	public String getLopsv_id() {
+		return lopsv_id;
 	}
 
 	public LopSV getLopSV() {
@@ -107,41 +64,26 @@ public class SV {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public void setGender(boolean gender) {
-		this.gender = gender;
-	}
-
-	public void setPassport(String passport) {
-		this.passport = passport;
-	}
-
 	public void setEmailEducation(String emailEducation) {
 		this.emailEducation = emailEducation;
 	}
 
-	public void setInsurrance(String insurrance) {
-		this.insurrance = insurrance;
-	}
-
-	public void setRegion(Regions region) {
-		this.region = region;
+	public void setLopsv_id(String lopsv_id) {
+		this.lopsv_id = lopsv_id;
 	}
 
 	public void setLopSV(LopSV lopSV) {
 		this.lopSV = lopSV;
 	}
 
-	public SV(String name, String address, String phoneNumber, boolean gender, String passport, String emailEducation,
-			String insurrance, Regions region, LopSV lopSV) {
+	public SV(String id, String name, String address, String phoneNumber, String emailEducation,
+			String lopsv_id) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
-		this.gender = gender;
-		this.passport = passport;
 		this.emailEducation = emailEducation;
-		this.insurrance = insurrance;
-		this.region = region;
-		this.lopSV = lopSV;
+		this.lopsv_id = lopsv_id;
 	}
 }

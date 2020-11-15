@@ -1,6 +1,7 @@
 package com.thaithong.service;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.thaithong.entities.SV;
@@ -17,4 +18,15 @@ public class SVService {
 		return sVRepository.getAllSVs();
 	}
 	
+	public boolean insertSV(SV sv ) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+		return sVRepository.addSV(sv);
+	}
+	
+	public boolean deleteSv(String id) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+		return sVRepository.deleteSv(id);
+	}
+	
+	public SV findOne(String id) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {	
+		return sVRepository.findById(id);
+	}
 }
